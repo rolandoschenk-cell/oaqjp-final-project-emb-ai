@@ -1,8 +1,8 @@
 """Flask application for the Emotion Detector project."""
 
-from flask import Flask, request
+from flask import Flask, render_template, request
 
-from EmotionDetection import emotion_detector
+from EmotionDetection.emotion_detection import emotion_detector
 
 
 INVALID_TEXT_MESSAGE = "Invalid text! Please try again!"
@@ -23,6 +23,12 @@ def format_emotion_response(result):
         f"'sadness': {result['sadness']}. "
         f"The dominant emotion is {dominant_emotion}."
     )
+
+
+@app.route("/")
+def render_index_page():
+    """Render the application home page."""
+    return render_template("index.html")
 
 
 @app.route("/emotionDetector")
