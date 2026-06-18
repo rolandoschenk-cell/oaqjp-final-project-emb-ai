@@ -1,4 +1,4 @@
-# Emotion Detector
+# Final Project
 
 Flask application and Python package for the IBM/Coursera Emotion Detector
 final project. The package calls the Watson NLP Emotion Predict API and returns
